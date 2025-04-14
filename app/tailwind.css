@@ -4,9 +4,62 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-white dark:bg-gray-950 font-sans;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+@keyframes slide-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-slide-gradient {
+  animation: slide-gradient 0.25s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out both;
+}
+
+@keyframes yellow-flash {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #facc15;
+  }
+  100% {
+    color: #facc15;
+  }
+}
+
+@keyframes yellow-flash {
+  0%, 100% {
+    color: #ffffff;
+  }
+  50% {
+    color: #facc15;
+  }
+}
+
+.blink-yellow {
+  animation: yellow-flash 0.4s ease-in-out 2.5;
 }

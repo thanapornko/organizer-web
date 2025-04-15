@@ -3,7 +3,7 @@ import Layout from './layout';
 export default function Portfolio() {
   return (
     <Layout>
-      <div className='py-12 text-center'>
+      <div className='py-12 text-center px-4 md:px-32'>
         <h1 className='text-3xl font-bold tracking-widest text-black mb-10'>
           Portfolio
         </h1>{' '}

@@ -22,17 +22,18 @@ export default function Footer() {
           <h4 className='text-lg font-semibold'>ติดต่อเรา</h4>
           <div className='flex items-center gap-3'>
             <FaPhoneAlt className='text-green-500' />
-            <p className='text-sm'>082-444-2257</p>
+            <p className='text-sm'>094-529-9552 (คุณตั้ม)</p>
           </div>
           <div className='flex items-start gap-3'>
             <FaLocationDot className='text-red-500' />
             <p className='text-sm'>
-              21 ซอย สวัสดีทวีสุข แขวง ยานนาวา อำเภอ เมือง จังหวัด กรุงเทพ 11035
+              บริษัท ซีโร่ทูบิลเลี่ยนกรุ๊ป จำกัด เลขที่ 88/63 หมู่2 ต.บางเดื่อ
+              อ.เมืองปทุม จ.ปทุมธานี 12000
             </p>
           </div>
           <div className='flex items-center gap-3'>
             <FaFacebook className='text-blue-500' />
-            <p className='text-sm'>infinity9 organizer</p>
+            <p className='text-sm'>Infinity9 Organizer</p>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
+import banner from '~/assets/images/banner.png';
 
 import NavBar from '~/components/Header';
 import ServiceBox from '~/components/ServiceBox';
@@ -45,15 +46,20 @@ export default function Index() {
           ))}
         </Swiper>
       </div> */}
-      <div
+      {/* <div
         className='w-full h-[650px] overflow-hidden bg-black text-white flex items-center justify-center text-center bg-cover bg-center'
-        style={{ backgroundImage: "url('/images/banner.png')" }}
-      >
-        {/* animated neon lines */}
-        <div className='absolute w-[200%] h-[200%] neon-lines z-0'></div>
+        style={{ backgroundImage: `url(${banner})` }}
+      > */}
 
+      <div className='relative w-full h-[650px] overflow-hidden text-center'>
+        <img
+          src='/images/banner.png'
+          alt='Banner'
+          className='absolute inset-0 w-full h-full object-cover'
+          loading='eager'
+        />
         {/* content */}
-        <div className='relative z-10 px-4'>
+        <div className='relative z-10 flex flex-col items-center justify-center h-full px-4 '>
           <h1 className='text-6xl md:text-9xl font-extrabold text-purple-300 drop-shadow-[0_0_20px_rgba(215,166,255,0.8)] leading-tight animate-fade-in-up'>
             MAKE THE
             <br />
@@ -62,7 +68,7 @@ export default function Index() {
 
           <p
             className='mt-6 max-w-3xl mx-auto text-2xl text-white/90 animate-fade-in-up'
-            style={{ animationDelay: '0.4s' }}
+            style={{ animationDelay: '0.5s' }}
           >
             We specialize in creating impactful events, merging creativity and
             precision to deliver unforgettable, seamless experiences

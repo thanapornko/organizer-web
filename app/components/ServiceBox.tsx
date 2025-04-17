@@ -2,31 +2,31 @@ const services = [
   {
     text: 'Event Flea Market',
     image:
-      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895819/63-1_tsykjc.jpg',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744895819/63-1_tsykjc.jpg',
     link: '/services#market',
   },
   {
     text: 'Production',
     image:
-      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895880/production_ravsp3.png',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744895880/production_ravsp3.png',
     link: '/services#production',
   },
   {
     text: 'Activity Service',
     image:
-      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895893/activity_jkxqd5.png',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744895893/activity_jkxqd5.png',
     link: '/services#activity',
   },
   {
     text: 'Workshop',
     image:
-      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895896/workshop_qhjiuz.png',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744895896/workshop_qhjiuz.png',
     link: '/services#workshop',
   },
   {
     text: 'Cooperate Event',
     image:
-      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895939/cooperation_zrsvjm.png',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744895939/cooperation_zrsvjm.png',
     link: '/services#cooperate',
   },
 ];

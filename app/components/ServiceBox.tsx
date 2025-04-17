@@ -1,27 +1,32 @@
 const services = [
   {
     text: 'Event Flea Market',
-    image: '/images/market1.png',
+    image:
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895819/63-1_tsykjc.jpg',
     link: '/services#market',
   },
   {
     text: 'Production',
-    image: '/images/production1.png',
+    image:
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895880/production_ravsp3.png',
     link: '/services#production',
   },
   {
     text: 'Activity Service',
-    image: '/images/activity1.png',
+    image:
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895893/activity_jkxqd5.png',
     link: '/services#activity',
   },
   {
     text: 'Workshop',
-    image: '/images/workshop1.png',
+    image:
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895896/workshop_qhjiuz.png',
     link: '/services#workshop',
   },
   {
     text: 'Cooperate Event',
-    image: '/images/market1.png',
+    image:
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1744895939/cooperation_zrsvjm.png',
     link: '/services#cooperate',
   },
 ];

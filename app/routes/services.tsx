@@ -16,15 +16,15 @@ export default function Services() {
             1. Event Flea Market
           </h2>
           <p>เรารับทำ</p>
-          <div className='w-full grid grid-cols-2 gap-4 mt-4'>
+          <div className='w-full mt-4 flex flex-col gap-4 md:grid md:grid-cols-2'>
             <img
-              src='/images/market1.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896094/65-5_mjkb7a.jpg'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
             />
             <img
-              src='/images/market2.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896098/64-10_ttelqh.jpg'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
@@ -39,15 +39,15 @@ export default function Services() {
             2. Production
           </h2>
           <p>เรารับทำ</p>
-          <div className='w-full grid grid-cols-2 gap-4 mt-4'>
+          <div className='w-full mt-4 flex flex-col gap-4 md:grid md:grid-cols-2'>
             <img
-              src='/images/production1.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896139/64-3_b0nuev.jpg'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
             />
             <img
-              src='/images/production2.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896129/S__45916166_iwdoav.jpg'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
@@ -62,15 +62,15 @@ export default function Services() {
             3. Activity Service
           </h2>
           <p>เรารับทำ</p>
-          <div className='w-full grid grid-cols-2 gap-4 mt-4'>
+          <div className='w-full mt-4 flex flex-col gap-4 md:grid md:grid-cols-2'>
             <img
-              src='/images/activity1.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896038/65-1_gtviyb.jpg'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
             />
             <img
-              src='/images/activity2.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896042/chinese_wfmnun.png'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
@@ -85,15 +85,15 @@ export default function Services() {
             4. Workshop
           </h2>
           <p>เรารับทำ</p>
-          <div className='w-full grid grid-cols-2 gap-4 mt-4'>
+          <div className='w-full mt-4 flex flex-col gap-4 md:grid md:grid-cols-2'>
             <img
-              src='/images/workshop1.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896260/workshop1_dzbpta.png'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
             />
             <img
-              src='/images/workshop2.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744896266/workshop2_byq1u2.png'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'
@@ -108,15 +108,9 @@ export default function Services() {
             5.Cooperate Event
           </h2>
           <p>เรารับทำ</p>
-          <div className='w-full grid grid-cols-2 gap-4 mt-4'>
+          <div className='w-full mt-4 flex flex-col gap-4 md:grid md:grid-cols-2'>
             <img
-              src='/images/market1.png'
-              alt=''
-              className='w-full h-[450px] object-cover rounded-md'
-              loading='lazy'
-            />
-            <img
-              src='/images/market2.png'
+              src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744895939/cooperation_zrsvjm.png'
               alt=''
               className='w-full h-[450px] object-cover rounded-md'
               loading='lazy'

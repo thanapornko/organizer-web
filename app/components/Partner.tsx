@@ -7,14 +7,15 @@ import 'swiper/css/navigation';
 
 export default function Partner() {
   const logos = [
-    '/images/logo2.png',
-    '/images/logo3.png',
-    '/images/logo4.png',
-    '/images/logo5.png',
-    '/images/logo6.png',
-    '/images/logo7.png',
-    '/images/logo8.png',
-    '/images/logo9.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894906/logo2_ehc0m1.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894906/logo3_fu5vur.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894922/logo5_bpjqmv.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894923/logo4_bhj9nk.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894923/logo6_lqihtb.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894923/logo8_wlige2.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894924/logo10_wn88z1.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894924/logo7_r3mf3l.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1744894924/logo9_xetolm.png',
   ];
 
   return (

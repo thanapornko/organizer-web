@@ -16,7 +16,7 @@ export default function Index() {
     <Layout>
       <div className='relative w-full h-[650px] overflow-hidden text-center'>
         <img
-          src='/images/banner.png'
+          src='https://res.cloudinary.com/dhgny94kc/image/upload/v1744895605/banner_g1xlc5.jpg'
           alt='Banner'
           className='absolute inset-0 w-full h-full object-cover'
           loading='eager'

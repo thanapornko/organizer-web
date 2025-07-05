@@ -7,8 +7,9 @@ import 'swiper/css/navigation';
 
 export default function Partner() {
   const logos = [
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894906/logo2_ehc0m1.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1745304849/11_oedv1z.png',
     'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894906/logo3_fu5vur.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1745304850/12_sinvz3.png',
     'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894922/logo5_bpjqmv.png',
     'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894923/logo4_bhj9nk.png',
     'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894923/logo6_lqihtb.png',

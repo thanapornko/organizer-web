@@ -31,10 +31,17 @@ export default function Footer() {
               อ.เมืองปทุม จ.ปทุมธานี 12000
             </p>
           </div>
-          <div className='flex items-center gap-3'>
-            <FaFacebook className='text-blue-500' />
-            <p className='text-sm'>Infinity9 Organizer</p>
-          </div>
+          <a
+            href='https://www.facebook.com/infinity9organizer?locale=th_TH'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-block'
+          >
+            <div className='flex items-center gap-3 hover:opacity-80 transition'>
+              <FaFacebook className='text-blue-500 text-xl' />
+              <p className='text-sm'>Infinity9 Organizer</p>
+            </div>
+          </a>
         </div>
       </div>
     </footer>

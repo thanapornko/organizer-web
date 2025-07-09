@@ -107,7 +107,7 @@ export default function Header() {
             <Link
               key={page.name}
               to={page.path}
-              className={`block pb-2 hover:text-violet-900 ${
+              className={`block pb-2 hover:text-[#5790c3] ${
                 index === 0 ? 'pt-4' : ''
               } ${index === pages.length - 1 ? 'pb-4' : ''} ${
                 index !== pages.length - 1 ? 'border-b border-gray-700' : ''

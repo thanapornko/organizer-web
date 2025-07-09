@@ -18,29 +18,31 @@ export default function Footer() {
         </div>
 
         {/* Right Column */}
-        <div className='w-1/2 \l:w-2/5 space-y-4'>
+        <div className='w-full md:w-2/5 space-y-4'>
           <h4 className='text-lg font-semibold'>ติดต่อเรา</h4>
+
           <div className='flex items-center gap-3'>
-            <FaPhoneAlt className='text-green-500' />
+            <FaPhoneAlt className='text-green-500 text-base md:text-xl' />
             <p className='text-sm'>094-529-9552 (คุณตั้ม)</p>
           </div>
+
           <div className='flex items-start gap-3'>
-            <FaLocationDot className='text-red-500' />
+            <FaLocationDot className='text-red-500 text-base md:text-xl' />
             <p className='text-sm'>
               บริษัท ซีโร่ทูบิลเลี่ยนกรุ๊ป จำกัด เลขที่ 88/63 หมู่2 ต.บางเดื่อ
               อ.เมืองปทุม จ.ปทุมธานี 12000
             </p>
           </div>
-          <div className='flex items-start'>
+
+          <div className='flex flex-col lg:flex-row lg:items-start gap-4'>
             <a
               href='https://www.facebook.com/infinity9organizer?locale=th_TH'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-block'
-              style={{ width: '200px' }}
+              className='inline-block w-[200px]'
             >
               <div className='flex items-center gap-3 hover:opacity-80 transition'>
-                <FaFacebook className='text-blue-500 text-xl' />
+                <FaFacebook className='text-blue-500 text-base md:text-xl' />
                 <p className='text-sm'>Infinity9 Organizer</p>
               </div>
             </a>
@@ -51,21 +53,21 @@ export default function Footer() {
               className='inline-block'
             >
               <div className='flex items-center gap-3 hover:opacity-80 transition'>
-                <FaTiktok className='text-white text-xl' />
+                <FaTiktok className='text-white text-base md:text-xl' />
                 <p className='text-sm'>infinity9organizer</p>
               </div>
             </a>
           </div>
-          <div className='flex items-start'>
+
+          <div className='flex flex-col lg:flex-row lg:items-start gap-4'>
             <a
               href='https://www.instagram.com/infinity9organizer/'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-block'
-              style={{ width: '200px' }}
+              className='inline-block w-[200px]'
             >
               <div className='flex items-center gap-3 hover:opacity-80 transition'>
-                <FaInstagram className='text-red-400 text-xl' />
+                <FaInstagram className='text-red-400 text-base md:text-xl' />
                 <p className='text-sm'>infinity9organizer</p>
               </div>
             </a>
@@ -76,7 +78,7 @@ export default function Footer() {
               className='inline-block'
             >
               <div className='flex items-center gap-3 hover:opacity-80 transition'>
-                <FaLine className='text-green-400 text-xl' />
+                <FaLine className='text-green-400 text-base md:text-xl' />
                 <p className='text-sm'>infi.9</p>
               </div>
             </a>

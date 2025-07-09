@@ -6,7 +6,7 @@ export default function PreviewContent() {
       <div className='flex flex-col lg:flex-row gap-10'>
         {/* Image */}
         <img
-          src='https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744895994/tumcover_apmfny.png'
+          src='https://res.cloudinary.com/dhgny94kc/image/upload/v1752061340/infinity9/tumcover_kpu470.jpg'
           className='w-full lg:w-[500px] h-[300px] sm:h-[400px] lg:h-full object-cover rounded-lg flex-shrink-0'
           alt='Event Preview'
         />

@@ -104,14 +104,14 @@ export default function AboutUs() {
           ปณิทานของเรา
         </h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto'>
-          <div className='bg-[#E11D48] shadow-md rounded-xl p-6 border'>
+          <div className='bg-[#5790c3] shadow-md rounded-xl p-6 border'>
             <h3 className='text-xl font-semibold text-white mb-2'>Passion</h3>
             <p className='text-sm text-white'>
               เราทำงานด้วยความหลงใหลและเชื่อมั่นว่าสิ่งที่ดีเริ่มจากใจที่รักในสิ่งที่ทำ
             </p>
           </div>
 
-          <div className='bg-[#0E7490] shadow-md rounded-xl p-6 border'>
+          <div className='bg-[#eb993b] shadow-md rounded-xl p-6 border'>
             <h3 className='text-xl font-semibold text-white mb-2'>Integrity</h3>
             <p className='text-sm text-white'>
               ความซื่อสัตย์ต่อคู่ค้าและลูกค้า
@@ -119,7 +119,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className='bg-[#10B981] shadow-md rounded-xl p-6 border'>
+          <div className='bg-[#eb993b] shadow-md rounded-xl p-6 border'>
             <h3 className='text-xl font-semibold text-white mb-2'>
               Collaboration
             </h3>
@@ -128,7 +128,7 @@ export default function AboutUs() {
               เพื่อสร้างสรรค์สิ่งที่ยิ่งใหญ่ไปด้วยกัน
             </p>
           </div>
-          <div className='bg-[#7f34cb] shadow-md rounded-xl p-6 border'>
+          <div className='bg-[#5790c3] shadow-md rounded-xl p-6 border'>
             <h3 className='text-xl font-semibold text-white mb-2'>
               Work & Service
             </h3>

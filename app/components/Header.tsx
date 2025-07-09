@@ -43,7 +43,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Menu */}
-        <nav className='hidden md:flex font-medium gap-1'>
+        {/* <nav className='hidden md:flex font-medium gap-1'>
           {pages.map((page) => {
             const isActive = currentPath === page.path;
             return (
@@ -60,6 +60,28 @@ export default function Header() {
                       ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-[length:200%_100%] animate-slide-gradient'
                       : 'group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-purple-500 group-hover:to-purple-600 group-hover:bg-[length:200%_100%] group-hover:animate-slide-gradient'
                   }`}
+                >
+                  {page.name}
+                </span>
+              </Link>
+            );
+          })}
+        </nav> */}
+        <nav className='hidden md:flex font-medium gap-1'>
+          {pages.map((page) => {
+            const isActive = currentPath === page.path;
+            return (
+              <Link
+                key={page.name}
+                to={page.path}
+                className={`group relative px-3 py-1 transition-all duration-300 ${
+                  isActive
+                    ? 'text-[#5790c3]'
+                    : 'text-black hover:text-[#5790c3]'
+                }`}
+              >
+                <span
+                  className={`relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#eb993b] after:transition-all after:duration-800 group-hover:after:w-full`}
                 >
                   {page.name}
                 </span>

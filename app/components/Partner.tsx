@@ -7,23 +7,26 @@ import 'swiper/css/navigation';
 
 export default function Partner() {
   const logos = [
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1745304849/11_oedv1z.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894906/logo3_fu5vur.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1745304850/12_sinvz3.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894922/logo5_bpjqmv.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894923/logo4_bhj9nk.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894923/logo6_lqihtb.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894923/logo8_wlige2.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894924/logo10_wn88z1.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894924/logo7_r3mf3l.png',
-    'https://res.cloudinary.com/dhgny94kc/image/upload/f_webp/v1744894924/logo9_xetolm.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045904/infinity9/partner/logo1_mr7u2x.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045962/infinity9/partner/logo2_g2tg4w.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045907/infinity9/partner/logo3_pwd92n.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045959/infinity9/partner/logo4_enl0dj.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045912/infinity9/partner/logo5_dbrdk1.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045915/infinity9/partner/logo6_qdoszr.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045957/infinity9/partner/logo7_cj0o2o.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045965/infinity9/partner/logo8_d9vtw0.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045918/infinity9/partner/logo9_cykcwt.png',
+    'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045910/infinity9/partner/logo10_esfdml.png',
   ];
 
   return (
     <div className='py-12 border-b border-gray-300 text-center'>
-      <h2 className='text-2xl md:text-3xl font-bold tracking-widest text-black mb-10'>
-        OUR PARTNERS
-      </h2>
+      <div className='relative inline-block mb-12'>
+        <h2 className='text-2xl md:text-3xl font-bold tracking-widest text-[#5790c3] relative inline-block px-4 py-2 bg-[#5790c3]/10'>
+          OUR PARTNERS
+        </h2>
+        <div className='absolute left-0 right-0 bottom-0 translate-y-full h-[6px] bg-[#eb993b]'></div>
+      </div>
 
       <Swiper
         navigation={true}

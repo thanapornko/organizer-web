@@ -38,7 +38,14 @@ export default function Portfolio() {
       'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045423/infinity9/2019/2019-5_tdjlwh.jpg',
       'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045421/infinity9/2019/2019-3_jkvg89.jpg',
     ],
-    '2020': [],
+    '2020': [
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1757993504/infinity9/2020/2020-1_hkdp7a.jpg',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1757993504/infinity9/2020/2020-2_vuwzj0.jpg',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1757993504/infinity9/2020/2020-4_m1tilg.jpg',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1757993505/infinity9/2020/2020-3_kaijer.jpg',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1757993637/infinity9/2020/2020-5_zbb1ci.jpg',
+      'https://res.cloudinary.com/dhgny94kc/image/upload/v1757993632/infinity9/2020/2020-6_aozl7q.jpg',
+    ],
     '2021': [
       'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045464/infinity9/2021/2021-4_mf1v5j.jpg',
       'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045458/infinity9/2021/2021-9_i32jaf.jpg',

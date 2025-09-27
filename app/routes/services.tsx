@@ -22,12 +22,12 @@ export default function Services() {
       description:
         'ด้วยประสบการณ์การการทำงานกว่า 10 ปี ทำให้เรามีทีมงานที่รับผลิตโครงสร้างและอุปกรณ์ตกแต่งต่างๆ เรารับทำร้านเฟรนไชส์ ให้กับแบรนด์ต่างๆ รวมไปถึงโปรดักซ์ชั่นงานตกแต่งให้กับห้างสรรพสินค้าตามเทศกาลต่างๆ',
       images: [
-        'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045095/infinity9/2.production/production1_mih6ia.jpg',
-        'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045099/infinity9/2.production/production3_e9jfgd.jpg',
-        'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045096/infinity9/2.production/production4_xflcbd.jpg',
-        'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045097/infinity9/2.production/production5_trjblc.jpg',
-        'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045097/infinity9/2.production/production6_yjh62y.jpg',
-        'https://res.cloudinary.com/dhgny94kc/image/upload/v1752045100/infinity9/2.production/production2_pmvfzw.jpg',
+        'https:res.cloudinary.com/dhgny94kc/image/upload/v1753773098/infinity9/2.production/production2_epflci.png',
+        'https://res.cloudinary.com/dhgny94kc/image/upload/v1753773092/infinity9/2.production/production4_otczls.png',
+        'https://res.cloudinary.com/dhgny94kc/image/upload/v1753773092/infinity9/2.production/production5_o3shve.png',
+        'https://res.cloudinary.com/dhgny94kc/image/upload/v1753773092/infinity9/2.production/production1_t1u2bs.png',
+        'https://res.cloudinary.com/dhgny94kc/image/upload/v1753773092/infinity9/2.production/production6_dusd9l.png',
+        'https://res.cloudinary.com/dhgny94kc/image/upload/v1753773092/infinity9/2.production/production3_yyvoav.png',
       ],
     },
     {
@@ -94,13 +94,13 @@ export default function Services() {
             <p>{service.description}</p>
             <div className='w-full mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14'>
               {service.images.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt=''
-                  className='w-full h-[350px] object-cover rounded-md'
-                  loading='lazy'
-                />
+                <div className='relative w-full aspect-[4/3]'>
+                  <img
+                    src={img}
+                    alt=''
+                    className='absolute inset-0 w-full h-full object-cover rounded-md'
+                  />
+                </div>
               ))}
             </div>
           </div>

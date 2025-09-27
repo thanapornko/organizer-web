@@ -58,8 +58,20 @@ export const links: LinksFunction = () => [
   },
   { rel: 'dns-prefetch', href: 'https://res.cloudinary.com' },
 
-  { rel: 'icon', type: 'image/png', href: '/brandLogo.png' },
-  { rel: 'apple-touch-icon', href: '/brandLogo.png' },
+  { rel: 'icon', type: 'image/png', sizes: 'any', href: '/brandLogo.png?v=1' },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/brandLogo.png?v=1',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/brandLogo.png?v=1',
+  },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: '/brandLogo.png?v=1' },
 
   { rel: 'manifest', href: '/site.webmanifest' },
 ];

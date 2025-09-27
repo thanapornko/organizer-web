@@ -1,4 +1,4 @@
-// // app/routes/portfolio.tsx
+// app/routes/portfolio.tsx
 import type {
   MetaFunction,
   LinksFunction,
@@ -121,7 +121,7 @@ const projects: ProjectsMap = {
   ],
 };
 
-// --- Cloudinary helper (แทรนส์ฟอร์มรูปให้เร็ว/เล็ก) ---
+// --- Cloudinary helper ---
 const cld = (url: string, params: string) =>
   url.replace('/upload/', `/upload/${params}/`);
 
@@ -130,6 +130,30 @@ const thumbSrc = (url: string, w: number, h: number) =>
 
 const ogSrc = (url: string) => cld(url, 'f_auto,q_auto,c_fill,w_1200,h_630');
 
+// ---- Full image helpers ----
+const fullSrc = (url: string) =>
+  cld(url, 'f_auto,q_auto,dpr_auto,c_limit,w_1600');
+const fullSrcSet = (url: string) =>
+  [
+    cld(url, 'f_auto,q_auto,dpr_auto,c_limit,w_1200') + ' 1200w',
+    cld(url, 'f_auto,q_auto,dpr_auto,c_limit,w_1600') + ' 1600w',
+    cld(url, 'f_auto,q_auto,dpr_auto,c_limit,w_2000') + ' 2000w',
+  ].join(', ');
+const fullSizes = '(min-width:1024px) 80vw, 92vw';
+
+// ---- Blur placeholder (LQIP) ----
+const blurSrc = (url: string) => cld(url, 'f_auto,q_10,e_blur:2000,w_40');
+
+// ---- Preload cache ----
+const preloadCache = new Set<string>();
+function preloadImage(url: string) {
+  if (preloadCache.has(url)) return;
+  const img = new Image();
+  img.src = url;
+  preloadCache.add(url);
+}
+
+// ---------- Loader ----------
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
   const baseUrl = `${url.protocol}//${url.host}`;
@@ -142,7 +166,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const firstOfLatest = projects[latestYear]?.[0];
   const ogImage = firstOfLatest ? ogSrc(firstOfLatest) : undefined;
 
-  // JSON-LD: Breadcrumb + CollectionPage (สรุปผลงานรายปี) — limit 3 รูป/ปี กัน payload ยาวไป
+  // JSON-LD
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -179,6 +203,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return json({ canonical, ogImage, breadcrumbLd, collectionLd });
 }
 
+// ---------- Meta & Links ----------
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (!data) return [];
   const entries: ReturnType<MetaFunction> = [
@@ -215,9 +240,17 @@ export const links: LinksFunction = () => [
   { rel: 'dns-prefetch', href: 'https://res.cloudinary.com' },
 ];
 
+// ---------- UI ----------
 export default function Portfolio() {
   const data = useLoaderData<typeof loader>();
   const [selected, setSelected] = useState<string | null>(null);
+
+  const [isFullLoaded, setIsFullLoaded] = useState(false);
+
+  // เมื่อรูปที่เลือกเปลี่ยน ให้รีเซ็ตสถานะโหลด
+  useEffect(() => {
+    setIsFullLoaded(false);
+  }, [selected]);
 
   // ปิดด้วย ESC
   const onKeyDown = useCallback((e: KeyboardEvent) => {
@@ -291,6 +324,8 @@ export default function Portfolio() {
                     type='button'
                     className='block w-full'
                     onClick={() => setSelected(src)}
+                    onMouseEnter={() => preloadImage(fullSrc(src))}
+                    onFocus={() => preloadImage(fullSrc(src))}
                     aria-label={`เปิดดูภาพเต็ม: ${alt}`}
                   >
                     <div className='aspect-[4/3] w-full overflow-hidden'>
@@ -324,26 +359,67 @@ export default function Portfolio() {
           onClick={() => setSelected(null)}
         >
           <div
-            className='max-w-[90%] max-h-[90%]'
+            className='relative max-w-[90%] max-h-[90%]'
             onClick={(e) => e.stopPropagation()}
           >
+            {/* LQIP blur (โชว์ทันที) */}
             <img
-              src={cld(selected, 'f_auto,q_auto')}
-              alt='full-view'
-              className='max-w-full max-h-[90vh] rounded-lg shadow-lg'
-              decoding='async'
+              src={blurSrc(selected)}
+              alt=''
+              aria-hidden='true'
+              className='absolute inset-0 max-w-full max-h-[90vh] rounded-lg blur-xl scale-105'
             />
-            <div className='mt-3 text-center'>
-              <button
-                onClick={() => setSelected(null)}
-                className='px-4 py-2 rounded-md bg-white/90 hover:bg-white text-black text-sm'
-              >
-                ปิด
-              </button>
-            </div>
+
+            {/* รูปใหญ่ + สปินเนอร์ + fade-in */}
+            <FullImage src={selected} onLoaded={() => setIsFullLoaded(true)} />
+
+            {isFullLoaded && (
+              <div className='mt-3 text-center relative z-10'>
+                <button
+                  onClick={() => setSelected(null)}
+                  className='px-4 py-2 rounded-md bg-white/90 hover:bg-white text-black text-sm'
+                >
+                  ปิด
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
     </Layout>
+  );
+}
+
+// ---------- Sub component: รูปใหญ่ในโมดัล ----------
+function FullImage({ src, onLoaded }: { src: string; onLoaded?: () => void }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => setLoaded(false), [src]);
+
+  return (
+    <div className='relative'>
+      {!loaded && (
+        <div className='absolute inset-0 flex items-center justify-center'>
+          <div className='h-8 w-8 rounded-full border-2 border-white/50 border-t-white animate-spin' />
+        </div>
+      )}
+
+      <img
+        src={fullSrc(src)}
+        srcSet={fullSrcSet(src)}
+        sizes={fullSizes}
+        alt='full-view'
+        className={`relative max-w-full max-h-[90vh] rounded-lg shadow-lg transition-opacity duration-300 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        onLoad={() => {
+          setLoaded(true);
+          onLoaded?.();
+        }}
+        loading='eager'
+        fetchPriority='high'
+        decoding='async'
+      />
+    </div>
   );
 }

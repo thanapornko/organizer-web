@@ -1,3 +1,4 @@
+// app/root.tsx
 import {
   Links,
   Meta,
@@ -5,10 +6,35 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import type { LinksFunction } from '@remix-run/node';
-// import indexStyles from './index.css';
-
+import type {
+  LoaderFunctionArgs,
+  MetaFunction,
+  LinksFunction,
+} from '@remix-run/node';
+import { json } from '@remix-run/node';
 import './tailwind.css';
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const host = new URL(request.url).host;
+  const isPreview = /vercel\.app|netlify\.app|pages\.dev|onrender\.com/i.test(
+    host
+  );
+  return json({ isPreview });
+}
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => [
+  {
+    name: 'robots',
+    content: data?.isPreview
+      ? 'noindex,nofollow'
+      : 'index,follow,max-image-preview:large',
+  },
+  { name: 'theme-color', content: '#0b0b12' },
+  { name: 'color-scheme', content: 'light' },
+  { name: 'format-detection', content: 'telephone=no,address=no,email=no' },
+  { property: 'og:site_name', content: 'Infinity9 Organizer' },
+  { name: 'twitter:card', content: 'summary_large_image' },
+];
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -25,22 +51,48 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap',
   },
-  // { rel: 'stylesheet', href: indexStyles },
+  {
+    rel: 'preconnect',
+    href: 'https://res.cloudinary.com',
+    crossOrigin: 'anonymous',
+  },
+  { rel: 'dns-prefetch', href: 'https://res.cloudinary.com' },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/favicon-32x32.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/favicon-16x16.png',
+  },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+  { rel: 'manifest', href: '/site.webmanifest' },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='th'>
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className='min-h-screen antialiased bg-white text-black'>
+        <a
+          href='#main'
+          className='sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:shadow'
+        >
+          ข้ามไปยังเนื้อหาหลัก
+        </a>
+        <div id='main'>{children}</div>
         <ScrollRestoration />
         <Scripts />
+        <noscript>This site works best with JavaScript enabled.</noscript>
       </body>
     </html>
   );
@@ -48,4 +100,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return <Outlet />;
+}
+
+export function ErrorBoundary() {
+  return (
+    <html lang='th'>
+      <head>
+        <Meta />
+        <Links />
+        <meta name='robots' content='noindex' />
+        <title>เกิดข้อผิดพลาด</title>
+      </head>
+      <body>
+        <h1>เกิดข้อผิดพลาด</h1>
+        <Scripts />
+      </body>
+    </html>
+  );
 }

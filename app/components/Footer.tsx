@@ -97,14 +97,6 @@ export default function Footer() {
               <p>
                 {COMPANY_LEGAL} เลขที่ 88/63 หมู่ 2 ต.บางเดื่อ อ.เมืองปทุม
                 จ.ปทุมธานี 12000{' '}
-                <a
-                  className='underline decoration-dotted hover:decoration-solid'
-                  href={MAP_URL}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  (ดูแผนที่)
-                </a>
               </p>
             </div>
           </address>
